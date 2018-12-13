@@ -8,15 +8,14 @@ import './header.css';
 export default function Header(props) {
 
     if(props.what === true) {
-        console.log(props.what);
         return (<InfoModal what={props.what} handleGotIt={ props.handleGotIt}/>)
     }
 
-    //
     return (
         <header>
             <TopNav what={props.what}
             handleWhatClick={props.handleWhatClick}
+            handleNewGame={props.handleNewGame}
             />
             {/* <InfoModal /> */}
             <h1>HOT or COLD</h1>

@@ -17,7 +17,7 @@ export default function TopNav(props) {
                 </li>
                 <li>
                     <a className="new" href="#"
-                    /* onClick={ () => console.log('+ New Game was clicked') } */
+                    onClick={ () => props.handleNewGame() }
                     >
                         + New Game
                     </a>

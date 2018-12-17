@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './guess-list.css';
 
 function GuessList(props) {
-    console.log('GuessList props', props.guessHistory)
+    console.log('GuessList props', props)
     const guesses = props.guessHistory.map((guess, index) => (
         <li key={index}>
             {guess}

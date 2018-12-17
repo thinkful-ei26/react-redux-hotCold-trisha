@@ -21,24 +21,46 @@ const reducer = (state=initialState, action) => {
   }
   
   if (action.type === HANDLE_GUESS) {
-    let response, guess;
+    // console.log(action);
+    // let guess;
     
-    const diff = Math.abs(guess - state.correctAnswer);
-        
+    const diff = Math.abs(action.guess - state.correctAnswer);
+    
+    console.log('diff: ', diff);
     if (diff >= 50){
-      response = 'ICE COLD'
+      // response = 'ICE COLD'
+      return Object.assign({}, state, {
+        response: 'ICE COLD',
+        guessHistory: [...state.guessHistory, action.guess] 
+      })
     } 
     else if (diff >= 30){
-      response = 'COLD'
+      // response = 'COLD'
+      return Object.assign({}, state, {
+        response: 'COLD',
+        guessHistory: [...state.guessHistory, action.guess] 
+      })
     } 
     else if (diff >= 10){
-      response = 'WARM'
+      // response = 'WARM'
+      return Object.assign({}, state, {
+        response: 'WARM',
+        guessHistory: [...state.guessHistory, action.guess]  
+    })
     } 
     else if (diff >= 1){
-      response ='HOT!!'
+      // response ='HOT!!'
+      return Object.assign({}, state, {
+        response: 'HOT',
+        guessHistory: [...state.guessHistory, action.guess]  
+      })
     } 
     else if (diff === 0){
-      response = 'WINNER'
+      // response = 'WINNER'
+      return Object.assign({}, state, {
+        response: 'WINNER',
+        guessHistory: [...state.guessHistory, action.guess]  
+      })
     } 
 
     return Object.assign({}, state, {
@@ -46,6 +68,7 @@ const reducer = (state=initialState, action) => {
       guessCounter: (state.guessCounter + 1),
       guessHistory: [...state.guessHistory, action.guess ] 
     })
+
   }
 
   else if( action.type === NEW_GAME) {

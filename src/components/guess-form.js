@@ -5,7 +5,6 @@ import { handleGuess } from '../actions';
 import './guess-form.css';
 
 function GuessForm(props) {
-
     return (
         <form 
         onSubmit={ (e) => {

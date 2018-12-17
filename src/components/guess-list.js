@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import './guess-list.css';
 
-export default function GuessList(props) {
-    const guesses = props.guesses.map((guess, index) => (
+function GuessList(props) {
+    console.log('GuessList props', props.guessHistory)
+    const guesses = props.guessHistory.map((guess, index) => (
         <li key={index}>
             {guess}
         </li>
@@ -15,3 +16,9 @@ export default function GuessList(props) {
         </ul>
     );
 };
+
+const mapStateToProps = (state) => ({
+    guessHistory: state.guessHistory
+  });
+  
+  export default connect(mapStateToProps)(GuessList);

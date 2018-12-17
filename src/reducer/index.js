@@ -23,7 +23,7 @@ const reducer = (state=initialState, action) => {
   if (action.type === HANDLE_GUESS) {
     let response, guess;
     
-    const diff = Math.abs(guess - this.state.correctAnswer);
+    const diff = Math.abs(guess - state.correctAnswer);
         
     if (diff >= 50){
       response = 'ICE COLD'

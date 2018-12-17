@@ -9,15 +9,13 @@ function GuessSection(props) {
     return (
         <section>
             <h2 id="feedback">{props.response}</h2>
-            <GuessForm 
-            // handleGuess={(guess) => props.handleGuess(guess)}
-            />
+            <GuessForm />
         </section>
     );
 }
 
 const mapStateToProps = (state) => ({
     response: state.response,
-  });
+});
 
-  export default connect(mapStateToProps)(GuessSection);
+export default connect(mapStateToProps)(GuessSection);

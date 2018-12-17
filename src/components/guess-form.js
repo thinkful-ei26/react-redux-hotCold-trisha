@@ -1,21 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { handleGuess } from '../actions';
-
 import './guess-form.css';
 
-function GuessForm(props) {
+export function GuessForm(props) {
     return (
         <form 
         onSubmit={ (e) => {
             e.preventDefault();
-
-            console.log('Guess button was clicked', e.currentTarget.elements.userGuess.value);
-            
+            // console.log('Guess button was clicked', e.currentTarget.elements.userGuess.value);
             props.dispatch(handleGuess(e.currentTarget.elements.userGuess.value));
             } 
         }>
-
             <input type="text" name="userGuess" id="userGuess"
                 className="text" maxLength="3" autoComplete="off"
                 placeholder="Enter your Guess" required />

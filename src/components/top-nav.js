@@ -8,23 +8,14 @@ import './top-nav.css';
 function TopNav(props) {
 
     if(props.what === true) {
-        return (
-        <InfoModal 
-        /* handleGot it needs to be moved inside the component */
-            // what={props.what} 
-            // handleGotIt={ props.handleGotIt }
-            // onClick={ () => props.dispatch(handleGotIt()) }
-        />)
+        return ( < InfoModal />)
     }
     return (
         <nav>
             <ul className="clearfix">
                 <li>
-                    <a 
-                    className="what" href="#what"
-                    onClick={ () => props.dispatch(handleWhatClick()) }
-                    // what={props.what}
-                    >
+                    <a className="what" href="#what"
+                    onClick={ () => props.dispatch(handleWhatClick()) } >
                         What?
                     </a>
                 </li>
@@ -40,10 +31,7 @@ function TopNav(props) {
     );
 }
 
-//we don't need defaultProps because that's in reducer already 
-// TopNav.defaultProps = {
-//     what: false
-// };
+//our reducer has initialState so TopNav.defaultProps() is not needed 
 
 export const mapStateToProps = state => ({
     what: state.what

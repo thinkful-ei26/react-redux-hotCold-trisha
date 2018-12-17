@@ -3,7 +3,7 @@ import './guess-count.css';
 import { connect } from 'react-redux';
 
 export function GuessCount(props) {
-    console.log('props.guessCounter in <GuessCounter/>', props.guessCounter);
+    // console.log('props.guessCounter in <GuessCounter/>', props.guessCounter);
     return (
         <p> Guess #<span id="count">{props.guessCounter}</span>! </p>
     );

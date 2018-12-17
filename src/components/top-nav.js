@@ -7,7 +7,7 @@ import './top-nav.css';
 
 function TopNav(props) {
 
-    if(props.what === true) {
+    if(props.what) {
         return ( < InfoModal />)
     }
     return (

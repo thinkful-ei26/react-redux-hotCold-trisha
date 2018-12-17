@@ -26,27 +26,32 @@ const reducer = (state=initialState, action) => {
     if (diff >= 50){
       return Object.assign({}, state, {
         response: 'ICE COLD',
-        guessHistory: [...state.guessHistory, action.guess] 
+        guessHistory: [...state.guessHistory, action.guess], 
+        guessCounter: (state.guessCounter + 1) 
       })
     } else if (diff >= 30){
       return Object.assign({}, state, {
         response: 'COLD',
-        guessHistory: [...state.guessHistory, action.guess] 
+        guessHistory: [...state.guessHistory, action.guess],
+        guessCounter: (state.guessCounter + 1)  
       })
     } else if (diff >= 10){
       return Object.assign({}, state, {
         response: 'WARM',
-        guessHistory: [...state.guessHistory, action.guess]  
+        guessHistory: [...state.guessHistory, action.guess],
+        guessCounter: (state.guessCounter + 1)   
       })
     }  else if (diff >= 1){
       return Object.assign({}, state, {
         response: 'HOT',
-        guessHistory: [...state.guessHistory, action.guess]  
+        guessHistory: [...state.guessHistory, action.guess],
+        guessCounter: (state.guessCounter + 1)   
       })
     } else if (diff === 0){
       return Object.assign({}, state, {
         response: 'WINNER',
-        guessHistory: [...state.guessHistory, action.guess]  
+        guessHistory: [...state.guessHistory, action.guess],
+        guessCounter: (state.guessCounter + 1)   
       })
     } 
 

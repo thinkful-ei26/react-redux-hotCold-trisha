@@ -17,7 +17,7 @@ export default function InfoModal(props) {
                     <p>So, Are you ready?</p>
                     <a 
                     className="close" 
-                    href="#"
+                    href="#got"
                     onClick={ () => props.handleGotIt() }
                     >Got It!</a>
                 </div>

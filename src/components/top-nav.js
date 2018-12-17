@@ -8,7 +8,7 @@ export default function TopNav(props) {
             <ul className="clearfix">
                 <li>
                     <a 
-                    className="what" href="#"
+                    className="what" href="#what"
                     onClick={ () => props.handleWhatClick() }
                     what={props.what}
                     >
@@ -16,7 +16,7 @@ export default function TopNav(props) {
                     </a>
                 </li>
                 <li>
-                    <a className="new" href="#"
+                    <a className="new" href="#new"
                     onClick={ () => props.handleNewGame() }
                     >
                         + New Game

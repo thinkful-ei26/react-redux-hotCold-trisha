@@ -12,7 +12,7 @@ export default class Game extends React.Component {
 
         this.state = {
             currentGuess: -1,
-            randomNum: Math.floor(Math.random()*101),
+            correctAnswer: (Math.floor(Math.random()*100) + 1),
             what: false,
             newGame: false, 
             response: 'Make your Guess!', 
@@ -22,15 +22,21 @@ export default class Game extends React.Component {
     }
 
     handleGuess(guess){
-        const diff = Math.abs(guess - this.state.randomNum);
+        const diff = Math.abs(guess - this.state.correctAnswer);
         
-        if (diff <= 10){
-            this.setState({response: 'HOT'});
+        if (diff >= 50){
+            this.setState({response: 'ICE COLD'});
         } 
-        if (diff > 10){
+        else if (diff >= 30){
             this.setState({response: 'COLD'});
         } 
-        if (diff === 0){
+        else if (diff >= 10){
+            this.setState({response: 'WARM'});
+        } 
+        else if (diff >= 1){
+            this.setState({response: 'HOT!!'});
+        } 
+        else if (diff === 0){
             this.setState({response: 'WINNER'});
         } 
 
@@ -56,7 +62,7 @@ export default class Game extends React.Component {
     handleNewGame(){
         this.setState({
             currentGuess: -1,
-            randomNum: Math.floor(Math.random()*101),
+            correctAnswer: Math.floor(Math.random()*101),
             what: false,
             newGame: false, 
             response: 'Make your Guess!', 
@@ -71,9 +77,7 @@ export default class Game extends React.Component {
             <div>
                 <Header what={this.state.what}
                 handleWhatClick={ () => this.handleWhatClick()}
-    
                 handleGotIt={ () => this.handleGotIt()}
-                
                 handleNewGame={ () => this.handleNewGame()}
                 />
 

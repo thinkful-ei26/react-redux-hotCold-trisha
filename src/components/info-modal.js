@@ -1,8 +1,10 @@
 import React from 'react';
+import { handleGotIt } from '../actions';
+import { connect } from 'react-redux';
 
 import './info-modal.css';
 
-export default function InfoModal(props) {
+function InfoModal(props) {
     return (
         <div className="overlay" id="modal">
             <div className="content">
@@ -18,10 +20,16 @@ export default function InfoModal(props) {
                     <a 
                     className="close" 
                     href="#got"
-                    onClick={ () => props.handleGotIt() }
+                    onClick={ () => props.dispatch(handleGotIt()) }
                     >Got It!</a>
                 </div>
             </div>
         </div>
     );
 }
+
+export const mapStateToProps = state => ({
+    what: state.what
+});
+
+export default connect(mapStateToProps)(InfoModal);

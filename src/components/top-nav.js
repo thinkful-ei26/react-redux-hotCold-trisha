@@ -10,7 +10,8 @@ function TopNav(props) {
     if(props.what === true) {
         return (
         <InfoModal 
-            what={props.what} 
+        /* handleGot it needs to be moved inside the component */
+            // what={props.what} 
             // handleGotIt={ props.handleGotIt }
             // onClick={ () => props.dispatch(handleGotIt()) }
         />)

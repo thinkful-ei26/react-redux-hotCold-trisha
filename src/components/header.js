@@ -11,3 +11,5 @@ export default function Header(props) {
         </header>
     );
 };
+
+//consider folding the header component, as it's not doing anything but holding topnav. 

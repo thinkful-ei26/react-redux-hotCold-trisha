@@ -7,9 +7,8 @@ import './top-nav.css';
 
 function TopNav(props) {
 
-    if(props.what) {
-        return ( < InfoModal />)
-    }
+    if(props.what) { return ( < InfoModal />) }
+    
     return (
         <nav>
             <ul className="clearfix">
